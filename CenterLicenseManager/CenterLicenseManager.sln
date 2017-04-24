@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CenterLicenseManager", "CenterLicenseManager\CenterLicenseManager.csproj", "{98890B70-85D5-4F8F-9B8A-5302CA18267E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CenterLicenseManagerInstaller", "CenterLicenseManagerInstaller\CenterLicenseManagerInstaller.vdproj", "{86A11255-3786-43B9-9143-C6D1845D570C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98890B70-85D5-4F8F-9B8A-5302CA18267E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98890B70-85D5-4F8F-9B8A-5302CA18267E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98890B70-85D5-4F8F-9B8A-5302CA18267E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98890B70-85D5-4F8F-9B8A-5302CA18267E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86A11255-3786-43B9-9143-C6D1845D570C}.Debug|Any CPU.ActiveCfg = Debug
+		{86A11255-3786-43B9-9143-C6D1845D570C}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

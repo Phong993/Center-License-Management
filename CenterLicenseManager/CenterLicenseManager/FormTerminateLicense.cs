@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace CenterLicenseManager
 {
-    public partial class PhuocForm : Form
+    public partial class FormTerminateLicense : Form
     {
-        public PhuocForm()
+        public FormTerminateLicense()
         {
             InitializeComponent();
         }

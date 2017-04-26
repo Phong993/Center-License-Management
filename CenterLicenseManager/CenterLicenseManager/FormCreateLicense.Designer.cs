@@ -51,9 +51,10 @@
             // txtCreateLicense
             // 
             this.txtCreateLicense.AutoSize = true;
+            this.txtCreateLicense.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCreateLicense.Location = new System.Drawing.Point(12, 9);
             this.txtCreateLicense.Name = "txtCreateLicense";
-            this.txtCreateLicense.Size = new System.Drawing.Size(78, 13);
+            this.txtCreateLicense.Size = new System.Drawing.Size(92, 13);
             this.txtCreateLicense.TabIndex = 0;
             this.txtCreateLicense.Text = "Create License";
             this.txtCreateLicense.Click += new System.EventHandler(this.label1_Click);
@@ -77,7 +78,7 @@
             this.grpCreateLicense.Controls.Add(this.txtCustomerName);
             this.grpCreateLicense.Location = new System.Drawing.Point(-1, 25);
             this.grpCreateLicense.Name = "grpCreateLicense";
-            this.grpCreateLicense.Size = new System.Drawing.Size(408, 250);
+            this.grpCreateLicense.Size = new System.Drawing.Size(398, 250);
             this.grpCreateLicense.TabIndex = 1;
             this.grpCreateLicense.TabStop = false;
             // 
@@ -182,39 +183,44 @@
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(192, 176);
+            this.btnBrowse.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnBrowse.ForeColor = System.Drawing.Color.White;
+            this.btnBrowse.Location = new System.Drawing.Point(180, 176);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(74, 23);
             this.btnBrowse.TabIndex = 3;
             this.btnBrowse.Text = "Browse";
-            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.UseVisualStyleBackColor = false;
             this.btnBrowse.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnCreate
             // 
+            this.btnCreate.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCreate.ForeColor = System.Drawing.Color.White;
             this.btnCreate.Location = new System.Drawing.Point(111, 219);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(74, 23);
             this.btnCreate.TabIndex = 3;
             this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnClear
             // 
+            this.btnClear.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.Location = new System.Drawing.Point(192, 219);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(74, 23);
-            this.btnClear.TabIndex = 3;
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 4;
             this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.button1_Click);
+            this.btnClear.UseVisualStyleBackColor = false;
             // 
             // FormCreateLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 282);
+            this.ClientSize = new System.Drawing.Size(401, 282);
             this.Controls.Add(this.grpCreateLicense);
             this.Controls.Add(this.txtCreateLicense);
             this.Name = "FormCreateLicense";
@@ -243,7 +249,7 @@
         private System.Windows.Forms.Label txtAddress;
         private System.Windows.Forms.TextBox tbCustomerName;
         private System.Windows.Forms.Label txtCustomerName;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnClear;
     }
 }

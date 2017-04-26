@@ -45,7 +45,7 @@
             this.terminateLicenseToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(367, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(643, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -61,6 +61,7 @@
             this.createLicenseToolStripMenuItem.Name = "createLicenseToolStripMenuItem";
             this.createLicenseToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.createLicenseToolStripMenuItem.Text = "Create License";
+            this.createLicenseToolStripMenuItem.Click += new System.EventHandler(this.createLicenseToolStripMenuItem_Click);
             // 
             // transferLicenseToolStripMenuItem
             // 
@@ -68,6 +69,7 @@
             this.transferLicenseToolStripMenuItem.Name = "transferLicenseToolStripMenuItem";
             this.transferLicenseToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
             this.transferLicenseToolStripMenuItem.Text = "Transfer License";
+            this.transferLicenseToolStripMenuItem.Click += new System.EventHandler(this.transferLicenseToolStripMenuItem_Click);
             // 
             // terminateLicenseToolStripMenuItem
             // 
@@ -75,16 +77,20 @@
             this.terminateLicenseToolStripMenuItem.Name = "terminateLicenseToolStripMenuItem";
             this.terminateLicenseToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
             this.terminateLicenseToolStripMenuItem.Text = "Terminate License";
+            this.terminateLicenseToolStripMenuItem.Click += new System.EventHandler(this.terminateLicenseToolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 261);
+            this.ClientSize = new System.Drawing.Size(643, 483);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Center License Manager";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

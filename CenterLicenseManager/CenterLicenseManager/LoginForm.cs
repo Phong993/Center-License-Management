@@ -9,8 +9,10 @@ using System.Windows.Forms;
 
 namespace CenterLicenseManager
 {
+    public delegate void Showmnu();
     public partial class LoginForm : Form
     {
+        public event Showmnu evtMnu;
         public LoginForm()
         {
             InitializeComponent();
@@ -28,10 +30,22 @@ namespace CenterLicenseManager
                 MessageBox.Show("You must enter username!");
                 return;
             }
+            //Initialize connection to SQL Server
+            ConnectionString connection = new ConnectionString();
+            connection.ConnectSqlParam();
             // Check username and password not match
+            if(!(connection.CheckLogin(txtUsername.Text,txtPassword.Text)))
+            {
+                MessageBox.Show("Username or Password incorrect");
+            }
             //else if 
             // Check username and password match
-            this.Close();
+            else
+            {
+                MainForm mainForm = new MainForm();
+                evtMnu();
+                this.Close();
+            }            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

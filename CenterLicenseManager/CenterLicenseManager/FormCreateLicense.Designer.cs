@@ -30,21 +30,21 @@
         {
             this.txtCreateLicense = new System.Windows.Forms.Label();
             this.grpCreateLicense = new System.Windows.Forms.GroupBox();
-            this.txtCustomerName = new System.Windows.Forms.Label();
-            this.tbCustomerName = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txtLicenseFor = new System.Windows.Forms.Label();
-            this.cbLicenseFor = new System.Windows.Forms.ComboBox();
-            this.txtVersionFor = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.cbExpirationTime = new System.Windows.Forms.ComboBox();
             this.cbVersionFor = new System.Windows.Forms.ComboBox();
             this.txtExpirationTime = new System.Windows.Forms.Label();
-            this.cbExpirationTime = new System.Windows.Forms.ComboBox();
-            this.txtImportFile = new System.Windows.Forms.Label();
+            this.cbLicenseFor = new System.Windows.Forms.ComboBox();
+            this.txtVersionFor = new System.Windows.Forms.Label();
             this.tbImportFile = new System.Windows.Forms.TextBox();
-            this.btnBrowse = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtImportFile = new System.Windows.Forms.Label();
+            this.txtLicenseFor = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.Label();
+            this.tbCustomerName = new System.Windows.Forms.TextBox();
+            this.txtCustomerName = new System.Windows.Forms.Label();
             this.grpCreateLicense.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,69 +76,54 @@
             this.grpCreateLicense.Controls.Add(this.txtAddress);
             this.grpCreateLicense.Controls.Add(this.tbCustomerName);
             this.grpCreateLicense.Controls.Add(this.txtCustomerName);
-            this.grpCreateLicense.Location = new System.Drawing.Point(-1, 25);
+            this.grpCreateLicense.Location = new System.Drawing.Point(12, 25);
             this.grpCreateLicense.Name = "grpCreateLicense";
-            this.grpCreateLicense.Size = new System.Drawing.Size(398, 250);
+            this.grpCreateLicense.Size = new System.Drawing.Size(286, 250);
             this.grpCreateLicense.TabIndex = 1;
             this.grpCreateLicense.TabStop = false;
             // 
-            // txtCustomerName
+            // btnClear
             // 
-            this.txtCustomerName.AutoSize = true;
-            this.txtCustomerName.Location = new System.Drawing.Point(6, 19);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(85, 13);
-            this.txtCustomerName.TabIndex = 0;
-            this.txtCustomerName.Text = "Customer Name:";
+            this.btnClear.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(192, 219);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 4;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
             // 
-            // tbCustomerName
+            // btnCreate
             // 
-            this.tbCustomerName.Location = new System.Drawing.Point(97, 16);
-            this.tbCustomerName.Name = "tbCustomerName";
-            this.tbCustomerName.Size = new System.Drawing.Size(169, 20);
-            this.tbCustomerName.TabIndex = 1;
+            this.btnCreate.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.Location = new System.Drawing.Point(111, 219);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(74, 23);
+            this.btnCreate.TabIndex = 3;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtAddress
+            // btnBrowse
             // 
-            this.txtAddress.AutoSize = true;
-            this.txtAddress.Location = new System.Drawing.Point(43, 45);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(48, 13);
-            this.txtAddress.TabIndex = 0;
-            this.txtAddress.Text = "Address:";
+            this.btnBrowse.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnBrowse.ForeColor = System.Drawing.Color.White;
+            this.btnBrowse.Location = new System.Drawing.Point(192, 176);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(74, 23);
+            this.btnBrowse.TabIndex = 3;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseVisualStyleBackColor = false;
+            this.btnBrowse.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox2
+            // cbExpirationTime
             // 
-            this.textBox2.Location = new System.Drawing.Point(97, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 20);
-            this.textBox2.TabIndex = 1;
-            // 
-            // txtLicenseFor
-            // 
-            this.txtLicenseFor.AutoSize = true;
-            this.txtLicenseFor.Location = new System.Drawing.Point(29, 72);
-            this.txtLicenseFor.Name = "txtLicenseFor";
-            this.txtLicenseFor.Size = new System.Drawing.Size(62, 13);
-            this.txtLicenseFor.TabIndex = 0;
-            this.txtLicenseFor.Text = "License for:";
-            // 
-            // cbLicenseFor
-            // 
-            this.cbLicenseFor.FormattingEnabled = true;
-            this.cbLicenseFor.Location = new System.Drawing.Point(97, 69);
-            this.cbLicenseFor.Name = "cbLicenseFor";
-            this.cbLicenseFor.Size = new System.Drawing.Size(169, 21);
-            this.cbLicenseFor.TabIndex = 2;
-            // 
-            // txtVersionFor
-            // 
-            this.txtVersionFor.AutoSize = true;
-            this.txtVersionFor.Location = new System.Drawing.Point(29, 99);
-            this.txtVersionFor.Name = "txtVersionFor";
-            this.txtVersionFor.Size = new System.Drawing.Size(60, 13);
-            this.txtVersionFor.TabIndex = 0;
-            this.txtVersionFor.Text = "Version for:";
+            this.cbExpirationTime.FormattingEnabled = true;
+            this.cbExpirationTime.Location = new System.Drawing.Point(97, 123);
+            this.cbExpirationTime.Name = "cbExpirationTime";
+            this.cbExpirationTime.Size = new System.Drawing.Size(169, 21);
+            this.cbExpirationTime.TabIndex = 2;
             // 
             // cbVersionFor
             // 
@@ -157,13 +142,36 @@
             this.txtExpirationTime.TabIndex = 0;
             this.txtExpirationTime.Text = "Expiration Time:";
             // 
-            // cbExpirationTime
+            // cbLicenseFor
             // 
-            this.cbExpirationTime.FormattingEnabled = true;
-            this.cbExpirationTime.Location = new System.Drawing.Point(97, 123);
-            this.cbExpirationTime.Name = "cbExpirationTime";
-            this.cbExpirationTime.Size = new System.Drawing.Size(169, 21);
-            this.cbExpirationTime.TabIndex = 2;
+            this.cbLicenseFor.FormattingEnabled = true;
+            this.cbLicenseFor.Location = new System.Drawing.Point(97, 69);
+            this.cbLicenseFor.Name = "cbLicenseFor";
+            this.cbLicenseFor.Size = new System.Drawing.Size(169, 21);
+            this.cbLicenseFor.TabIndex = 2;
+            // 
+            // txtVersionFor
+            // 
+            this.txtVersionFor.AutoSize = true;
+            this.txtVersionFor.Location = new System.Drawing.Point(29, 99);
+            this.txtVersionFor.Name = "txtVersionFor";
+            this.txtVersionFor.Size = new System.Drawing.Size(60, 13);
+            this.txtVersionFor.TabIndex = 0;
+            this.txtVersionFor.Text = "Version for:";
+            // 
+            // tbImportFile
+            // 
+            this.tbImportFile.Location = new System.Drawing.Point(97, 150);
+            this.tbImportFile.Name = "tbImportFile";
+            this.tbImportFile.Size = new System.Drawing.Size(169, 20);
+            this.tbImportFile.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(97, 42);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(169, 20);
+            this.textBox2.TabIndex = 1;
             // 
             // txtImportFile
             // 
@@ -174,56 +182,49 @@
             this.txtImportFile.TabIndex = 0;
             this.txtImportFile.Text = "Import *.hid file:";
             // 
-            // tbImportFile
+            // txtLicenseFor
             // 
-            this.tbImportFile.Location = new System.Drawing.Point(97, 150);
-            this.tbImportFile.Name = "tbImportFile";
-            this.tbImportFile.Size = new System.Drawing.Size(169, 20);
-            this.tbImportFile.TabIndex = 1;
+            this.txtLicenseFor.AutoSize = true;
+            this.txtLicenseFor.Location = new System.Drawing.Point(29, 72);
+            this.txtLicenseFor.Name = "txtLicenseFor";
+            this.txtLicenseFor.Size = new System.Drawing.Size(62, 13);
+            this.txtLicenseFor.TabIndex = 0;
+            this.txtLicenseFor.Text = "License for:";
             // 
-            // btnBrowse
+            // txtAddress
             // 
-            this.btnBrowse.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnBrowse.ForeColor = System.Drawing.Color.White;
-            this.btnBrowse.Location = new System.Drawing.Point(180, 176);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(74, 23);
-            this.btnBrowse.TabIndex = 3;
-            this.btnBrowse.Text = "Browse";
-            this.btnBrowse.UseVisualStyleBackColor = false;
-            this.btnBrowse.Click += new System.EventHandler(this.button1_Click);
+            this.txtAddress.AutoSize = true;
+            this.txtAddress.Location = new System.Drawing.Point(43, 45);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(48, 13);
+            this.txtAddress.TabIndex = 0;
+            this.txtAddress.Text = "Address:";
             // 
-            // btnCreate
+            // tbCustomerName
             // 
-            this.btnCreate.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCreate.ForeColor = System.Drawing.Color.White;
-            this.btnCreate.Location = new System.Drawing.Point(111, 219);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(74, 23);
-            this.btnCreate.TabIndex = 3;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = false;
-            this.btnCreate.Click += new System.EventHandler(this.button1_Click);
+            this.tbCustomerName.Location = new System.Drawing.Point(97, 16);
+            this.tbCustomerName.Name = "tbCustomerName";
+            this.tbCustomerName.Size = new System.Drawing.Size(169, 20);
+            this.tbCustomerName.TabIndex = 1;
             // 
-            // btnClear
+            // txtCustomerName
             // 
-            this.btnClear.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(192, 219);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 4;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
+            this.txtCustomerName.AutoSize = true;
+            this.txtCustomerName.Location = new System.Drawing.Point(6, 19);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(85, 13);
+            this.txtCustomerName.TabIndex = 0;
+            this.txtCustomerName.Text = "Customer Name:";
             // 
             // FormCreateLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 282);
+            this.ClientSize = new System.Drawing.Size(402, 331);
             this.Controls.Add(this.grpCreateLicense);
             this.Controls.Add(this.txtCreateLicense);
             this.Name = "FormCreateLicense";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create License";
             this.grpCreateLicense.ResumeLayout(false);
             this.grpCreateLicense.PerformLayout();

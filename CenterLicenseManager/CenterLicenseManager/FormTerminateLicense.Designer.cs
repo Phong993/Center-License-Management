@@ -66,9 +66,9 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(1, 26);
+            this.groupBox1.Location = new System.Drawing.Point(12, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(397, 239);
+            this.groupBox1.Size = new System.Drawing.Size(270, 239);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
@@ -228,10 +228,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 269);
+            this.ClientSize = new System.Drawing.Size(402, 331);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "FormTerminateLicense";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Terminate License";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

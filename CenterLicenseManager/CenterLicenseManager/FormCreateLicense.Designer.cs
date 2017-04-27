@@ -39,7 +39,7 @@
             this.cbLicenseFor = new System.Windows.Forms.ComboBox();
             this.txtVersionFor = new System.Windows.Forms.Label();
             this.tbImportFile = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbAddress = new System.Windows.Forms.TextBox();
             this.txtImportFile = new System.Windows.Forms.Label();
             this.txtLicenseFor = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.Label();
@@ -70,7 +70,7 @@
             this.grpCreateLicense.Controls.Add(this.cbLicenseFor);
             this.grpCreateLicense.Controls.Add(this.txtVersionFor);
             this.grpCreateLicense.Controls.Add(this.tbImportFile);
-            this.grpCreateLicense.Controls.Add(this.textBox2);
+            this.grpCreateLicense.Controls.Add(this.tbAddress);
             this.grpCreateLicense.Controls.Add(this.txtImportFile);
             this.grpCreateLicense.Controls.Add(this.txtLicenseFor);
             this.grpCreateLicense.Controls.Add(this.txtAddress);
@@ -81,6 +81,7 @@
             this.grpCreateLicense.Size = new System.Drawing.Size(286, 250);
             this.grpCreateLicense.TabIndex = 1;
             this.grpCreateLicense.TabStop = false;
+            this.grpCreateLicense.Enter += new System.EventHandler(this.grpCreateLicense_Enter);
             // 
             // btnClear
             // 
@@ -92,10 +93,12 @@
             this.btnClear.TabIndex = 4;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnCreate
             // 
             this.btnCreate.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCreate.Enabled = false;
             this.btnCreate.ForeColor = System.Drawing.Color.White;
             this.btnCreate.Location = new System.Drawing.Point(111, 219);
             this.btnCreate.Name = "btnCreate";
@@ -166,12 +169,12 @@
             this.tbImportFile.Size = new System.Drawing.Size(169, 20);
             this.tbImportFile.TabIndex = 1;
             // 
-            // textBox2
+            // tbAddress
             // 
-            this.textBox2.Location = new System.Drawing.Point(97, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 20);
-            this.textBox2.TabIndex = 1;
+            this.tbAddress.Location = new System.Drawing.Point(97, 42);
+            this.tbAddress.Name = "tbAddress";
+            this.tbAddress.Size = new System.Drawing.Size(169, 20);
+            this.tbAddress.TabIndex = 1;
             // 
             // txtImportFile
             // 
@@ -244,7 +247,7 @@
         private System.Windows.Forms.ComboBox cbLicenseFor;
         private System.Windows.Forms.Label txtVersionFor;
         private System.Windows.Forms.TextBox tbImportFile;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbAddress;
         private System.Windows.Forms.Label txtImportFile;
         private System.Windows.Forms.Label txtLicenseFor;
         private System.Windows.Forms.Label txtAddress;

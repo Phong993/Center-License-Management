@@ -28,108 +28,104 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txtTransferLicense = new System.Windows.Forms.Label();
+            this.grpTransferLicense = new System.Windows.Forms.GroupBox();
+            this.cbExpirationTime = new System.Windows.Forms.ComboBox();
+            this.cbVersionFor = new System.Windows.Forms.ComboBox();
+            this.cbAddress = new System.Windows.Forms.ComboBox();
+            this.txtExpirationTime = new System.Windows.Forms.Label();
             this.btnTransfer = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnBrowseHid = new System.Windows.Forms.Button();
             this.btnBrowseTer = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.txtVersionFor = new System.Windows.Forms.Label();
+            this.tbCustomerName = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.Label();
+            this.txtCustomerName = new System.Windows.Forms.Label();
+            this.tbImportFileHid = new System.Windows.Forms.TextBox();
+            this.txtImportFileHid = new System.Windows.Forms.Label();
+            this.tbImportFileTer = new System.Windows.Forms.TextBox();
+            this.txtImportFileTer = new System.Windows.Forms.Label();
+            this.grpTransferLicense.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // txtTransferLicense
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Transfer License";
+            this.txtTransferLicense.AutoSize = true;
+            this.txtTransferLicense.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTransferLicense.Location = new System.Drawing.Point(13, 13);
+            this.txtTransferLicense.Name = "txtTransferLicense";
+            this.txtTransferLicense.Size = new System.Drawing.Size(102, 13);
+            this.txtTransferLicense.TabIndex = 0;
+            this.txtTransferLicense.Text = "Transfer License";
             // 
-            // groupBox1
+            // grpTransferLicense
             // 
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.btnTransfer);
-            this.groupBox1.Controls.Add(this.btnClear);
-            this.groupBox1.Controls.Add(this.btnBrowseHid);
-            this.groupBox1.Controls.Add(this.btnBrowseTer);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(12, 29);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(276, 297);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
+            this.grpTransferLicense.Controls.Add(this.cbExpirationTime);
+            this.grpTransferLicense.Controls.Add(this.cbVersionFor);
+            this.grpTransferLicense.Controls.Add(this.cbAddress);
+            this.grpTransferLicense.Controls.Add(this.txtExpirationTime);
+            this.grpTransferLicense.Controls.Add(this.btnTransfer);
+            this.grpTransferLicense.Controls.Add(this.btnClear);
+            this.grpTransferLicense.Controls.Add(this.btnBrowseHid);
+            this.grpTransferLicense.Controls.Add(this.btnBrowseTer);
+            this.grpTransferLicense.Controls.Add(this.txtVersionFor);
+            this.grpTransferLicense.Controls.Add(this.tbCustomerName);
+            this.grpTransferLicense.Controls.Add(this.txtAddress);
+            this.grpTransferLicense.Controls.Add(this.txtCustomerName);
+            this.grpTransferLicense.Controls.Add(this.tbImportFileHid);
+            this.grpTransferLicense.Controls.Add(this.txtImportFileHid);
+            this.grpTransferLicense.Controls.Add(this.tbImportFileTer);
+            this.grpTransferLicense.Controls.Add(this.txtImportFileTer);
+            this.grpTransferLicense.Enabled = false;
+            this.grpTransferLicense.Location = new System.Drawing.Point(12, 29);
+            this.grpTransferLicense.Name = "grpTransferLicense";
+            this.grpTransferLicense.Size = new System.Drawing.Size(276, 290);
+            this.grpTransferLicense.TabIndex = 1;
+            this.grpTransferLicense.TabStop = false;
             // 
-            // comboBox3
+            // cbExpirationTime
             // 
-            this.comboBox3.Enabled = false;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(97, 170);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(163, 21);
-            this.comboBox3.TabIndex = 3;
+            this.cbExpirationTime.Enabled = false;
+            this.cbExpirationTime.FormattingEnabled = true;
+            this.cbExpirationTime.Location = new System.Drawing.Point(100, 152);
+            this.cbExpirationTime.Name = "cbExpirationTime";
+            this.cbExpirationTime.Size = new System.Drawing.Size(163, 21);
+            this.cbExpirationTime.TabIndex = 3;
             // 
-            // comboBox2
+            // cbVersionFor
             // 
-            this.comboBox2.Enabled = false;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(97, 143);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(163, 21);
-            this.comboBox2.TabIndex = 3;
+            this.cbVersionFor.Enabled = false;
+            this.cbVersionFor.FormattingEnabled = true;
+            this.cbVersionFor.Location = new System.Drawing.Point(100, 125);
+            this.cbVersionFor.Name = "cbVersionFor";
+            this.cbVersionFor.Size = new System.Drawing.Size(163, 21);
+            this.cbVersionFor.TabIndex = 3;
             // 
-            // comboBox1
+            // cbAddress
             // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(97, 113);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(163, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cbAddress.Enabled = false;
+            this.cbAddress.FormattingEnabled = true;
+            this.cbAddress.Location = new System.Drawing.Point(100, 95);
+            this.cbAddress.Name = "cbAddress";
+            this.cbAddress.Size = new System.Drawing.Size(163, 21);
+            this.cbAddress.TabIndex = 3;
             // 
-            // label7
+            // txtExpirationTime
             // 
-            this.label7.AutoSize = true;
-            this.label7.Enabled = false;
-            this.label7.Location = new System.Drawing.Point(9, 173);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Expiration Time:";
+            this.txtExpirationTime.AutoSize = true;
+            this.txtExpirationTime.Enabled = false;
+            this.txtExpirationTime.Location = new System.Drawing.Point(12, 155);
+            this.txtExpirationTime.Name = "txtExpirationTime";
+            this.txtExpirationTime.Size = new System.Drawing.Size(82, 13);
+            this.txtExpirationTime.TabIndex = 0;
+            this.txtExpirationTime.Text = "Expiration Time:";
             // 
             // btnTransfer
             // 
             this.btnTransfer.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnTransfer.ForeColor = System.Drawing.Color.White;
-            this.btnTransfer.Location = new System.Drawing.Point(107, 266);
+            this.btnTransfer.Location = new System.Drawing.Point(107, 245);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(75, 23);
             this.btnTransfer.TabIndex = 2;
@@ -140,7 +136,7 @@
             // 
             this.btnClear.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(188, 266);
+            this.btnClear.Location = new System.Drawing.Point(188, 245);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 2;
@@ -151,7 +147,7 @@
             // 
             this.btnBrowseHid.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnBrowseHid.ForeColor = System.Drawing.Color.White;
-            this.btnBrowseHid.Location = new System.Drawing.Point(185, 223);
+            this.btnBrowseHid.Location = new System.Drawing.Point(188, 205);
             this.btnBrowseHid.Name = "btnBrowseHid";
             this.btnBrowseHid.Size = new System.Drawing.Size(75, 23);
             this.btnBrowseHid.TabIndex = 2;
@@ -169,108 +165,91 @@
             this.btnBrowseTer.Text = "Browse";
             this.btnBrowseTer.UseVisualStyleBackColor = false;
             // 
-            // label6
+            // txtVersionFor
             // 
-            this.label6.AutoSize = true;
-            this.label6.Enabled = false;
-            this.label6.Location = new System.Drawing.Point(31, 146);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Version for:";
+            this.txtVersionFor.AutoSize = true;
+            this.txtVersionFor.Enabled = false;
+            this.txtVersionFor.Location = new System.Drawing.Point(34, 128);
+            this.txtVersionFor.Name = "txtVersionFor";
+            this.txtVersionFor.Size = new System.Drawing.Size(60, 13);
+            this.txtVersionFor.TabIndex = 0;
+            this.txtVersionFor.Text = "Version for:";
             // 
-            // textBox3
+            // tbCustomerName
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(97, 89);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(163, 20);
-            this.textBox3.TabIndex = 1;
+            this.tbCustomerName.Enabled = false;
+            this.tbCustomerName.Location = new System.Drawing.Point(100, 71);
+            this.tbCustomerName.Name = "tbCustomerName";
+            this.tbCustomerName.Size = new System.Drawing.Size(163, 20);
+            this.tbCustomerName.TabIndex = 1;
             // 
-            // label5
+            // txtAddress
             // 
-            this.label5.AutoSize = true;
-            this.label5.Enabled = false;
-            this.label5.Location = new System.Drawing.Point(43, 116);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Address:";
+            this.txtAddress.AutoSize = true;
+            this.txtAddress.Enabled = false;
+            this.txtAddress.Location = new System.Drawing.Point(46, 98);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(48, 13);
+            this.txtAddress.TabIndex = 0;
+            this.txtAddress.Text = "Address:";
             // 
-            // label4
+            // txtCustomerName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Enabled = false;
-            this.label4.Location = new System.Drawing.Point(6, 92);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Customer Name:";
+            this.txtCustomerName.AutoSize = true;
+            this.txtCustomerName.Enabled = false;
+            this.txtCustomerName.Location = new System.Drawing.Point(9, 74);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(85, 13);
+            this.txtCustomerName.TabIndex = 0;
+            this.txtCustomerName.Text = "Customer Name:";
             // 
-            // textBox4
+            // tbImportFileHid
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(97, 197);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(163, 20);
-            this.textBox4.TabIndex = 1;
+            this.tbImportFileHid.Enabled = false;
+            this.tbImportFileHid.Location = new System.Drawing.Point(100, 179);
+            this.tbImportFileHid.Name = "tbImportFileHid";
+            this.tbImportFileHid.Size = new System.Drawing.Size(163, 20);
+            this.tbImportFileHid.TabIndex = 1;
             // 
-            // label8
+            // txtImportFileHid
             // 
-            this.label8.AutoSize = true;
-            this.label8.Enabled = false;
-            this.label8.Location = new System.Drawing.Point(14, 200);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Import *.hid file:";
+            this.txtImportFileHid.AutoSize = true;
+            this.txtImportFileHid.Enabled = false;
+            this.txtImportFileHid.Location = new System.Drawing.Point(17, 182);
+            this.txtImportFileHid.Name = "txtImportFileHid";
+            this.txtImportFileHid.Size = new System.Drawing.Size(79, 13);
+            this.txtImportFileHid.TabIndex = 0;
+            this.txtImportFileHid.Text = "Import *.hid file:";
             // 
-            // textBox2
+            // tbImportFileTer
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(97, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(163, 20);
-            this.textBox2.TabIndex = 1;
+            this.tbImportFileTer.Location = new System.Drawing.Point(97, 8);
+            this.tbImportFileTer.Name = "tbImportFileTer";
+            this.tbImportFileTer.Size = new System.Drawing.Size(163, 20);
+            this.tbImportFileTer.TabIndex = 1;
             // 
-            // label3
+            // txtImportFileTer
             // 
-            this.label3.AutoSize = true;
-            this.label3.Enabled = false;
-            this.label3.Location = new System.Drawing.Point(14, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Import *.ter file:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(97, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(163, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Import *.ter file";
+            this.txtImportFileTer.AutoSize = true;
+            this.txtImportFileTer.Location = new System.Drawing.Point(17, 11);
+            this.txtImportFileTer.Name = "txtImportFileTer";
+            this.txtImportFileTer.Size = new System.Drawing.Size(74, 13);
+            this.txtImportFileTer.TabIndex = 0;
+            this.txtImportFileTer.Text = "Import *.ter file";
             // 
             // FormTransferLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 331);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(402, 341);
+            this.Controls.Add(this.grpTransferLicense);
+            this.Controls.Add(this.txtTransferLicense);
             this.Name = "FormTransferLicense";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transfer License";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.FormTransferLicense_Load);
+            this.grpTransferLicense.ResumeLayout(false);
+            this.grpTransferLicense.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,25 +257,23 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label txtTransferLicense;
+        private System.Windows.Forms.GroupBox grpTransferLicense;
+        private System.Windows.Forms.ComboBox cbExpirationTime;
+        private System.Windows.Forms.ComboBox cbVersionFor;
+        private System.Windows.Forms.ComboBox cbAddress;
+        private System.Windows.Forms.Label txtExpirationTime;
         private System.Windows.Forms.Button btnTransfer;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnBrowseHid;
         private System.Windows.Forms.Button btnBrowseTer;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label txtVersionFor;
+        private System.Windows.Forms.TextBox tbCustomerName;
+        private System.Windows.Forms.Label txtAddress;
+        private System.Windows.Forms.Label txtCustomerName;
+        private System.Windows.Forms.TextBox tbImportFileHid;
+        private System.Windows.Forms.Label txtImportFileHid;
+        private System.Windows.Forms.TextBox tbImportFileTer;
+        private System.Windows.Forms.Label txtImportFileTer;
     }
 }

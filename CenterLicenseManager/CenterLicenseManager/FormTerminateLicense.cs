@@ -15,5 +15,10 @@ namespace CenterLicenseManager
         {
             InitializeComponent();
         }
+
+        private void FormTerminateLicense_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

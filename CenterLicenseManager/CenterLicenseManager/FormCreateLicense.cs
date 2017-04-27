@@ -18,10 +18,14 @@ namespace CenterLicenseManager
             cbLicenseFor.Items.Add("Tai");
             cbLicenseFor.Items.Add("Phong");
 
-            cbVersionFor.Items.Add("Phuoc");
-            cbVersionFor.Items.Add("Tai");
-            cbVersionFor.Items.Add("Phong");
+            cbVersionFor.Items.Add("1.0");
+            cbVersionFor.Items.Add("1.1");
+            cbVersionFor.Items.Add("1.2");
 
+            cbExpirationTime.Items.Add("15 days");
+            cbExpirationTime.Items.Add("1 months");
+            cbExpirationTime.Items.Add("3 months");
+            cbExpirationTime.Items.Add("9 months");
             this.tbCustomerName.TextChanged += new EventHandler(this.btnCreate_Hightlighted);
             this.tbAddress.TextChanged += new EventHandler(this.btnCreate_Hightlighted);
             this.cbLicenseFor.TextChanged += new EventHandler(this.btnCreate_Hightlighted);
@@ -36,10 +40,10 @@ namespace CenterLicenseManager
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBrowse_Click(object sender, EventArgs e)
         {
             OpenFileDialog choofdlog = new OpenFileDialog();
-            choofdlog.Filter = "All Files (*.txt)|*.txt";
+            choofdlog.Filter = "All Files (*.hid)|*.hid";
             choofdlog.FilterIndex = 1;
             choofdlog.Multiselect = true;
 
@@ -49,6 +53,10 @@ namespace CenterLicenseManager
                 string[] arrAllFiles = choofdlog.FileNames; //used when Multiselect = true           
             }
         }
+        //private void btnCreate_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Tao ra file*.cert");
+        //}
 
         private void btnCreate_Hightlighted(object sender, EventArgs e)
         {
@@ -78,6 +86,11 @@ namespace CenterLicenseManager
             cbVersionFor.Text = "";
             cbExpirationTime.Text = "";
             tbImportFile.Text = "";
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Create *.cert file :D a hi hi");
         }
     }
 }

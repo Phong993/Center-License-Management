@@ -31,7 +31,6 @@
             this.txtCreateLicense = new System.Windows.Forms.Label();
             this.grpCreateLicense = new System.Windows.Forms.GroupBox();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.cbExpirationTime = new System.Windows.Forms.ComboBox();
             this.cbVersionFor = new System.Windows.Forms.ComboBox();
@@ -45,6 +44,7 @@
             this.txtAddress = new System.Windows.Forms.Label();
             this.tbCustomerName = new System.Windows.Forms.TextBox();
             this.txtCustomerName = new System.Windows.Forms.Label();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.grpCreateLicense.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,8 +61,8 @@
             // 
             // grpCreateLicense
             // 
-            this.grpCreateLicense.Controls.Add(this.btnClear);
             this.grpCreateLicense.Controls.Add(this.btnCreate);
+            this.grpCreateLicense.Controls.Add(this.btnClear);
             this.grpCreateLicense.Controls.Add(this.btnBrowse);
             this.grpCreateLicense.Controls.Add(this.cbExpirationTime);
             this.grpCreateLicense.Controls.Add(this.cbVersionFor);
@@ -95,19 +95,6 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btnCreate
-            // 
-            this.btnCreate.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCreate.Enabled = false;
-            this.btnCreate.ForeColor = System.Drawing.Color.White;
-            this.btnCreate.Location = new System.Drawing.Point(111, 219);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(74, 23);
-            this.btnCreate.TabIndex = 3;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = false;
-            this.btnCreate.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btnBrowse
             // 
             this.btnBrowse.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -118,7 +105,7 @@
             this.btnBrowse.TabIndex = 3;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = false;
-            this.btnBrowse.Click += new System.EventHandler(this.button1_Click);
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // cbExpirationTime
             // 
@@ -219,6 +206,18 @@
             this.txtCustomerName.TabIndex = 0;
             this.txtCustomerName.Text = "Customer Name:";
             // 
+            // btnCreate
+            // 
+            this.btnCreate.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.Location = new System.Drawing.Point(111, 219);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnCreate.TabIndex = 5;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
             // FormCreateLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,7 +252,7 @@
         private System.Windows.Forms.Label txtAddress;
         private System.Windows.Forms.TextBox tbCustomerName;
         private System.Windows.Forms.Label txtCustomerName;
-        private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnCreate;
     }
 }

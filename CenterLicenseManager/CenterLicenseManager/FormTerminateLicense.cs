@@ -18,6 +18,20 @@ namespace CenterLicenseManager
 
         private void FormTerminateLicense_Load(object sender, EventArgs e)
         {
+            OpenFileDialog choofdlog = new OpenFileDialog();
+            choofdlog.Filter = "All Files (*.ter)|*.ter";
+            choofdlog.FilterIndex = 1;
+            choofdlog.Multiselect = true;
+            if (choofdlog.ShowDialog() == DialogResult.OK)
+            {
+                tbImportFileTer.Text = choofdlog.FileName;
+                string[] arrAllFiles = choofdlog.FileNames; //used when Multiselect = true           
+            }
+
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
 
         }
     }

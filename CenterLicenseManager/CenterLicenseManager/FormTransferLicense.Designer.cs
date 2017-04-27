@@ -77,7 +77,6 @@
             this.grpTransferLicense.Controls.Add(this.txtImportFileHid);
             this.grpTransferLicense.Controls.Add(this.tbImportFileTer);
             this.grpTransferLicense.Controls.Add(this.txtImportFileTer);
-            this.grpTransferLicense.Enabled = false;
             this.grpTransferLicense.Location = new System.Drawing.Point(12, 29);
             this.grpTransferLicense.Name = "grpTransferLicense";
             this.grpTransferLicense.Size = new System.Drawing.Size(276, 290);
@@ -86,7 +85,6 @@
             // 
             // cbExpirationTime
             // 
-            this.cbExpirationTime.Enabled = false;
             this.cbExpirationTime.FormattingEnabled = true;
             this.cbExpirationTime.Location = new System.Drawing.Point(100, 152);
             this.cbExpirationTime.Name = "cbExpirationTime";
@@ -95,7 +93,6 @@
             // 
             // cbVersionFor
             // 
-            this.cbVersionFor.Enabled = false;
             this.cbVersionFor.FormattingEnabled = true;
             this.cbVersionFor.Location = new System.Drawing.Point(100, 125);
             this.cbVersionFor.Name = "cbVersionFor";
@@ -104,7 +101,6 @@
             // 
             // cbAddress
             // 
-            this.cbAddress.Enabled = false;
             this.cbAddress.FormattingEnabled = true;
             this.cbAddress.Location = new System.Drawing.Point(100, 95);
             this.cbAddress.Name = "cbAddress";
@@ -142,6 +138,7 @@
             this.btnClear.TabIndex = 2;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnBrowseHid
             // 
@@ -153,6 +150,7 @@
             this.btnBrowseHid.TabIndex = 2;
             this.btnBrowseHid.Text = "Browse";
             this.btnBrowseHid.UseVisualStyleBackColor = false;
+            this.btnBrowseHid.Click += new System.EventHandler(this.btnBrowseHid_Click);
             // 
             // btnBrowseTer
             // 
@@ -164,6 +162,7 @@
             this.btnBrowseTer.TabIndex = 2;
             this.btnBrowseTer.Text = "Browse";
             this.btnBrowseTer.UseVisualStyleBackColor = false;
+            this.btnBrowseTer.Click += new System.EventHandler(this.btnBrowseTer_Click);
             // 
             // txtVersionFor
             // 
@@ -177,7 +176,6 @@
             // 
             // tbCustomerName
             // 
-            this.tbCustomerName.Enabled = false;
             this.tbCustomerName.Location = new System.Drawing.Point(100, 71);
             this.tbCustomerName.Name = "tbCustomerName";
             this.tbCustomerName.Size = new System.Drawing.Size(163, 20);
@@ -205,7 +203,6 @@
             // 
             // tbImportFileHid
             // 
-            this.tbImportFileHid.Enabled = false;
             this.tbImportFileHid.Location = new System.Drawing.Point(100, 179);
             this.tbImportFileHid.Name = "tbImportFileHid";
             this.tbImportFileHid.Size = new System.Drawing.Size(163, 20);

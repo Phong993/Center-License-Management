@@ -26,6 +26,7 @@ namespace CenterLicenseManager
             cbExpirationTime.Items.Add("1 months");
             cbExpirationTime.Items.Add("3 months");
             cbExpirationTime.Items.Add("9 months");
+
             this.tbCustomerName.TextChanged += new EventHandler(this.btnCreate_Hightlighted);
             this.tbAddress.TextChanged += new EventHandler(this.btnCreate_Hightlighted);
             this.cbLicenseFor.TextChanged += new EventHandler(this.btnCreate_Hightlighted);

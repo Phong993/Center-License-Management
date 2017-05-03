@@ -15,7 +15,7 @@ namespace CenterLicenseManager
         {
             string connectionString = null;
             
-            connectionString = "Data Source=192.168.9.20\\SQLExpress;Initial Catalog=LICENSE INFO;User ID=license_admin;Password=Hoabinh123";
+            connectionString = "Data Source=BIM-MINHDAT\\SQLExpress;Initial Catalog=LICENSE INFO;User ID=license_admin;Password=Hoabinh123";
             cnn = new SqlConnection(connectionString);
             try
             {
@@ -40,6 +40,27 @@ namespace CenterLicenseManager
             { return true; }
             else { return false; }
             this.cnn.Close();             
+        }
+
+        public bool checkDuplicateUser(string customerName)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT customer_name from LIC_INFO where customer_name = '" + customerName + "'",this.cnn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if(dt.Rows.Count>0)
+            { return true; }
+            else { return false; }
+            this.cnn.Close();
+        }
+
+        public void insertInfo(string customerName, string address, string licensefor, string versionfor, string expireday, string hid, string createdBy)
+        {
+            SqlCommand cmd = new SqlCommand("Insert into LIC_INFO(CUSTOMER_NAME,ADDRESS,LICENSE_FOR,VERSION_FOR,EXPIRE_DAY,HID,STATUS,CREATED_BY,CREATED_DAY) VALUES('" 
+                + customerName + "','" + address + "','" + licensefor + "','" + versionfor + "','" + expireday + "','" + hid + "','1','" 
+                + createdBy + "',GETDATE())", this.cnn);
+
+            cmd.ExecuteNonQuery();
         }
     }
 }

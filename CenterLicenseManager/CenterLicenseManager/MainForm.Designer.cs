@@ -33,6 +33,7 @@
             this.createLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transferLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.terminateLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(643, 24);
             this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Text = "rwe";
             // 
             // filesToolStripMenuItem
             // 
@@ -79,11 +80,22 @@
             this.terminateLicenseToolStripMenuItem.Text = "Terminate License";
             this.terminateLicenseToolStripMenuItem.Click += new System.EventHandler(this.terminateLicenseToolStripMenuItem_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(461, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "label1";
+            this.label1.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 483);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -105,6 +117,7 @@
         private System.Windows.Forms.ToolStripMenuItem createLicenseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transferLicenseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem terminateLicenseToolStripMenuItem;
+        public System.Windows.Forms.Label label1;
     }
 }
 

@@ -11,6 +11,7 @@ namespace CenterLicenseManager
 {
     public partial class MainForm : Form
     {
+        public string uName;
         public MainForm()
         {
             InitializeComponent();
@@ -19,15 +20,25 @@ namespace CenterLicenseManager
 
             //Delegate from Login Form
             loginForm.evtMnu += new Showmnu(EnableMenu);
+            loginForm.pun = new Passusername(showUName);
             loginForm.Show();
+            
         }
-
+        
         private void EnableMenu()
         {
             this.createLicenseToolStripMenuItem.Enabled = true;
             this.transferLicenseToolStripMenuItem.Enabled = true;
             this.terminateLicenseToolStripMenuItem.Enabled = true;
         }
+
+        private void showUName(object sender)
+        {            
+            menuStrip1.Items.Add((string)sender);
+            label1.Text = (string)sender;
+            TempSystem.UserName = label1.Text;    //Temp Table for store username        
+        }
+      
 
         private void createLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {

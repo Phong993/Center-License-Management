@@ -148,7 +148,7 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txtUsername;
+        public System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
     }
 }

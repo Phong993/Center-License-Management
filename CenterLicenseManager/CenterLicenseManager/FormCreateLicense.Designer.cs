@@ -30,6 +30,7 @@
         {
             this.txtCreateLicense = new System.Windows.Forms.Label();
             this.grpCreateLicense = new System.Windows.Forms.GroupBox();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.cbExpirationTime = new System.Windows.Forms.ComboBox();
@@ -44,7 +45,7 @@
             this.txtAddress = new System.Windows.Forms.Label();
             this.tbCustomerName = new System.Windows.Forms.TextBox();
             this.txtCustomerName = new System.Windows.Forms.Label();
-            this.btnCreate = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.grpCreateLicense.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +84,18 @@
             this.grpCreateLicense.TabStop = false;
             this.grpCreateLicense.Enter += new System.EventHandler(this.grpCreateLicense_Enter);
             // 
+            // btnCreate
+            // 
+            this.btnCreate.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.Location = new System.Drawing.Point(111, 219);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnCreate.TabIndex = 5;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -109,6 +122,7 @@
             // 
             // cbExpirationTime
             // 
+            this.cbExpirationTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbExpirationTime.FormattingEnabled = true;
             this.cbExpirationTime.Location = new System.Drawing.Point(97, 123);
             this.cbExpirationTime.Name = "cbExpirationTime";
@@ -117,6 +131,7 @@
             // 
             // cbVersionFor
             // 
+            this.cbVersionFor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVersionFor.FormattingEnabled = true;
             this.cbVersionFor.Location = new System.Drawing.Point(97, 96);
             this.cbVersionFor.Name = "cbVersionFor";
@@ -134,6 +149,7 @@
             // 
             // cbLicenseFor
             // 
+            this.cbLicenseFor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLicenseFor.FormattingEnabled = true;
             this.cbLicenseFor.Location = new System.Drawing.Point(97, 69);
             this.cbLicenseFor.Name = "cbLicenseFor";
@@ -206,18 +222,6 @@
             this.txtCustomerName.TabIndex = 0;
             this.txtCustomerName.Text = "Customer Name:";
             // 
-            // btnCreate
-            // 
-            this.btnCreate.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCreate.ForeColor = System.Drawing.Color.White;
-            this.btnCreate.Location = new System.Drawing.Point(111, 219);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(75, 23);
-            this.btnCreate.TabIndex = 5;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = false;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
-            // 
             // FormCreateLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,7 +247,6 @@
         private System.Windows.Forms.ComboBox cbExpirationTime;
         private System.Windows.Forms.ComboBox cbVersionFor;
         private System.Windows.Forms.Label txtExpirationTime;
-        private System.Windows.Forms.ComboBox cbLicenseFor;
         private System.Windows.Forms.Label txtVersionFor;
         private System.Windows.Forms.TextBox tbImportFile;
         private System.Windows.Forms.TextBox tbAddress;
@@ -254,5 +257,7 @@
         private System.Windows.Forms.Label txtCustomerName;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.ComboBox cbLicenseFor;
     }
 }

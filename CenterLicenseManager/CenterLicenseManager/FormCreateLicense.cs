@@ -3,38 +3,34 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
 namespace CenterLicenseManager
 {
+    
     public partial class FormCreateLicense : Form
     {
+        Dictionary<String, String> mAddinNameList;
+        Dictionary<String, String> mVersionList;
+        string SQLHID;
+        string strCode;        
+        
+        const string TRIDES_KEY = "NaQ8K@t59#ZaQ21!Mgu=";
+        const string EXTRA_KEY = ".Bg19@1F8d=";
         public FormCreateLicense()
         {
             InitializeComponent();
-            cbLicenseFor.Items.Add("Phuoc");
-            cbLicenseFor.Items.Add("Tai");
-            cbLicenseFor.Items.Add("Phong");
-
-            cbVersionFor.Items.Add("1.0");
-            cbVersionFor.Items.Add("1.1");
-            cbVersionFor.Items.Add("1.2");
-
-            cbExpirationTime.Items.Add("15 days");
-            cbExpirationTime.Items.Add("1 months");
-            cbExpirationTime.Items.Add("3 months");
-            cbExpirationTime.Items.Add("9 months");
-
-            this.tbCustomerName.TextChanged += new EventHandler(this.btnCreate_Hightlighted);
-            this.tbAddress.TextChanged += new EventHandler(this.btnCreate_Hightlighted);
-            this.cbLicenseFor.TextChanged += new EventHandler(this.btnCreate_Hightlighted);
-            this.cbVersionFor.TextChanged += new EventHandler(this.btnCreate_Hightlighted);
-            this.cbExpirationTime.TextChanged += new EventHandler(this.btnCreate_Hightlighted);
-            this.tbImportFile.TextChanged += new EventHandler(this.btnCreate_Hightlighted);
-
-        }
+            this.createAddinList();
+            this.createVersionList();
+            this.initExpirationTimeList();
+            this.initAddinNameList();
+            this.initVersionList();
+            //MessageBox.Show(TempSystem.UserName);
+        }      
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -87,11 +83,290 @@ namespace CenterLicenseManager
             cbVersionFor.Text = "";
             cbExpirationTime.Text = "";
             tbImportFile.Text = "";
+        }        
+        private TripleDES CreateDES(string key)
+        {
+            MD5 md5 = new MD5CryptoServiceProvider();
+            TripleDES des = new TripleDESCryptoServiceProvider();
+            des.Key = md5.ComputeHash(Encoding.Unicode.GetBytes(key));
+            des.IV = new byte[des.BlockSize / 8];
+            md5.Clear();
+            return des;
         }
+        private void checkCustomerName(string customerName)
+        {
+            
 
+        }
+        private void genSerialKey()
+        {
+            try
+            {
+                FileStream fs = new FileStream(this.tbImportFile.Text, FileMode.Open, FileAccess.Read);
+                StreamReader reader = new StreamReader(fs);
+                strCode = reader.ReadToEnd();
+                SQLHID = strCode;
+                reader.Close();                
+            }
+            catch
+            {
+                MessageBox.Show("Please insert a *.HID file.");
+                
+            }
+                   
+            //Get file name
+            string filename = Path.GetFileName(this.tbImportFile.Text);
+            int index = filename.IndexOf(".");
+            if (index > 0)
+                filename = filename.Substring(0, index);            
+
+            AddinNameItem item = this.cbLicenseFor.SelectedItem as AddinNameItem;
+            VersionItem itemver = this.cbVersionFor.SelectedItem as VersionItem;
+
+            strCode = strCode + item.Value + itemver.Value + "|" + this.createExpiredTime();
+
+            String randomKey = this.randomKey() + EXTRA_KEY;
+            strCode = this.encodeByDES(strCode, randomKey);
+
+            strCode = strCode + "." + this.encodeByDES(randomKey, TRIDES_KEY);
+            FolderBrowserDialog openFileDiaglog = new FolderBrowserDialog();
+            if(openFileDiaglog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = Path.Combine(openFileDiaglog.SelectedPath,filename+".cert");
+                if(!File.Exists(filePath))
+                {
+                    FileStream fscert = new FileStream(filePath, FileMode.Create, FileAccess.Write);
+                    StreamWriter writer = new StreamWriter(fscert);
+                    writer.Write(strCode);
+                    writer.Close();
+                }
+                else
+                {
+                    MessageBox.Show("File " + filename + ".cert already exists.");
+                }
+            }
+
+        }
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Create *.cert file :D a hi hi");
+            ConnectionString connection = new ConnectionString();
+            connection.ConnectSqlParam();            
+            try
+            {
+                if (!(connection.checkDuplicateUser(tbCustomerName.Text)))
+                {                    
+                    genSerialKey();
+                    connection.insertInfo(tbCustomerName.Text, tbAddress.Text, this.cbLicenseFor.SelectedItem.ToString(), cbVersionFor.SelectedItem.ToString()
+                            , cbExpirationTime.SelectedItem.ToString(), SQLHID, TempSystem.UserName);
+                }
+                else { MessageBox.Show("Customer Name is already exitst."); }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private String encodeByDES(String pText, String pKey)
+        {
+            byte[] toEncryptArray = UTF8Encoding.Unicode.GetBytes(pText);
+            TripleDES cryptic = CreateDES(pKey);
+            byte[] resultArray = cryptic.CreateEncryptor().TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+
+            return Convert.ToBase64String(resultArray, 0, resultArray.Length);
+        }
+        private String randomKey(int len = 8)
+        {
+            String strChar = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+            Random rnd = new Random();
+            String key = "";
+            int k = 0;
+            while (k < len)
+            {
+                int pos = rnd.Next(0, strChar.Length - 1);
+                String ch = strChar[pos].ToString();
+                if (key.Contains(ch))
+                    continue;
+                key += ch;
+                k++;
+            }
+
+            return key;
+        }
+        private void createAddinList()
+        {
+            this.mAddinNameList = new Dictionary<string, string>();
+
+            this.mAddinNameList.Add("d578b210-3fa4-4528-9a6a-6ca60bbd51d3", "Rebar Detailing");
+            this.mAddinNameList.Add("cbbd3d14-d9f6-454f-8349-3237847ccfd4", "Sheet Maker - Duplicate View - Align View");
+            this.mAddinNameList.Add("e6ffda32-58f8-4e88-b19c-8123bf45e2fa", "Formwork Area");
+            this.mAddinNameList.Add("483ada3a-a4ff-4f59-9c71-4189d0dfffcc", "Export/Import Schedule To/From Excel");
+        }
+
+        private void createVersionList()
+        {
+            this.mVersionList = new Dictionary<string, string>();
+
+            this.mVersionList.Add("1", "Version 1.0");
+            this.mVersionList.Add("2", "Version 2.0");
+            this.mVersionList.Add("3", "Version 3.0");
+        }
+        private void initVersionList()
+        {
+            foreach (KeyValuePair<string, string> entry in this.mVersionList)
+            {
+                VersionItem item = new VersionItem();
+                item.Text = entry.Value;
+                item.Value = entry.Key;
+                this.cbVersionFor.Items.Add(item);
+            }
+            this.cbVersionFor.SelectedIndex = 0;
+        }
+        private void initExpirationTimeList()
+        {
+            ExpirationTimeItem item0 = new ExpirationTimeItem();
+            item0.Text = "15 Days";
+            item0.Value = ExpirationTime.FIFTEEN_DAYS;
+            this.cbExpirationTime.Items.Add(item0);
+
+            ExpirationTimeItem item1 = new ExpirationTimeItem();
+            item1.Text = "3 Months";
+            item1.Value = ExpirationTime.THREE_MONTHS;
+            this.cbExpirationTime.Items.Add(item1);
+
+            ExpirationTimeItem item2 = new ExpirationTimeItem();
+            item2.Text = "6 Months";
+            item2.Value = ExpirationTime.SIX_MONTHS;
+            this.cbExpirationTime.Items.Add(item2);
+
+            ExpirationTimeItem item3 = new ExpirationTimeItem();
+            item3.Text = "1 Year";
+            item3.Value = ExpirationTime.ONE_YEAR;
+            this.cbExpirationTime.Items.Add(item3);
+
+            ExpirationTimeItem item4 = new ExpirationTimeItem();
+            item4.Text = "2 Years";
+            item4.Value = ExpirationTime.TWO_YEARS;
+            this.cbExpirationTime.Items.Add(item4);
+
+            ExpirationTimeItem item5 = new ExpirationTimeItem();
+            item5.Text = "Unlimited";
+            item5.Value = ExpirationTime.UNLIMITED;
+            this.cbExpirationTime.Items.Add(item5);
+
+            this.cbExpirationTime.SelectedIndex = 3;
+        }
+        private void initAddinNameList()
+        {
+            foreach (KeyValuePair<string, string> entry in this.mAddinNameList)
+            {
+                AddinNameItem item = new AddinNameItem();
+                item.Text = entry.Value;
+                item.Value = entry.Key;
+                this.cbLicenseFor.Items.Add(item);
+            }
+
+            this.cbLicenseFor.SelectedIndex = 0;
+        }
+        private String createExpiredTime()
+        {
+
+            DateTime d1 = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0);
+
+            DateTime d2 = d1;
+
+            ExpirationTimeItem item = this.cbExpirationTime.SelectedItem as ExpirationTimeItem;
+
+            switch (item.Value)
+            {
+                case ExpirationTime.FIFTEEN_DAYS:
+                    d2 = d1.AddDays(15);
+                    break;
+                case ExpirationTime.THREE_MONTHS:
+                    d2 = d1.AddMonths(3);
+                    break;
+                case ExpirationTime.SIX_MONTHS:
+                    d2 = d1.AddMonths(6);
+                    break;
+                case ExpirationTime.ONE_YEAR:
+                    d2 = d1.AddYears(1);
+                    break;
+                case ExpirationTime.TWO_YEARS:
+                    d2 = d1.AddYears(2);
+                    break;
+                case ExpirationTime.UNLIMITED:
+                    d2 = d1;
+                    break;
+            }
+
+            if (d1 == d2)
+                return "0";
+
+            return d1.Ticks.ToString() + "-" + d2.Ticks.ToString();
+
+        }
+
+
+    }
+    enum ExpirationTime
+    {
+        FIFTEEN_DAYS = 15,
+        THREE_MONTHS = 3,
+        SIX_MONTHS = 6,
+        ONE_YEAR = 1,
+        TWO_YEARS = 2,
+        UNLIMITED = 0
+
+    }
+    class AddinNameItem
+    {
+        public String Text
+        {
+            get; set;
+        }
+
+        public String Value
+        {
+            get; set;
+        }
+
+        public override string ToString()
+        {
+            return Text;
+        }
+    }
+    class VersionItem
+    {
+        public String Text
+        {
+            get; set;
+        }
+
+        public String Value
+        {
+            get; set;
+        }
+
+        public override string ToString()
+        {
+            return Text;
+        }
+    }
+    class ExpirationTimeItem
+    {
+        public String Text
+        {
+            get; set;
+        }
+
+        public ExpirationTime Value
+        {
+            get; set;
+        }
+
+        public override string ToString()
+        {
+            return Text;
         }
     }
 }

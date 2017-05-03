@@ -10,9 +10,11 @@ using System.Windows.Forms;
 namespace CenterLicenseManager
 {
     public delegate void Showmnu();
+    public delegate void Passusername(object sender);
     public partial class LoginForm : Form
     {
         public event Showmnu evtMnu;
+        public Passusername pun;
         public LoginForm()
         {
             InitializeComponent();
@@ -21,8 +23,7 @@ namespace CenterLicenseManager
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
-        }
-
+        }       
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text.Length == 0)
@@ -43,8 +44,9 @@ namespace CenterLicenseManager
             else
             {
                 MainForm mainForm = new MainForm();
-                evtMnu();
-                this.Close();
+                evtMnu();                
+                pun(txtUsername.Text);
+                this.Hide();
             }            
         }
 

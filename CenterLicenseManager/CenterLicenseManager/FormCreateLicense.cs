@@ -201,6 +201,8 @@ namespace CenterLicenseManager
             this.mAddinNameList.Add("cbbd3d14-d9f6-454f-8349-3237847ccfd4", "Sheet Maker - Duplicate View - Align View");
             this.mAddinNameList.Add("e6ffda32-58f8-4e88-b19c-8123bf45e2fa", "Formwork Area");
             this.mAddinNameList.Add("483ada3a-a4ff-4f59-9c71-4189d0dfffcc", "Export/Import Schedule To/From Excel");
+            this.mAddinNameList.Add("18bca09b-da16-4171-a955-7692d0e3713f", "Element Locate 2017");
+            this.mAddinNameList.Add("647fb033-66e1-45c9-8ea7-4e7c7cc00692", "TotalRebar - MutipleSelect 2017");
         }
 
         private void createVersionList()

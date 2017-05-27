@@ -135,10 +135,16 @@ namespace CenterLicenseManager
                 string filePath = Path.Combine(openFileDiaglog.SelectedPath,filename+".cert");
                 if(!File.Exists(filePath))
                 {
+
                     FileStream fscert = new FileStream(filePath, FileMode.Create, FileAccess.Write);
                     StreamWriter writer = new StreamWriter(fscert);
                     writer.Write(strCode);
                     writer.Close();
+
+                    ConnectionString connection = new ConnectionString();
+                    connection.ConnectSqlParam();
+                    connection.insertInfo(tbCustomerName.Text, tbAddress.Text, this.cbLicenseFor.SelectedItem.ToString(), cbVersionFor.SelectedItem.ToString()
+                            , cbExpirationTime.SelectedItem.ToString(), SQLHID, TempSystem.UserName);
                 }
                 else
                 {
@@ -155,9 +161,7 @@ namespace CenterLicenseManager
             {
                 if (!(connection.checkDuplicateUser(tbCustomerName.Text)))
                 {                    
-                    genSerialKey();
-                    connection.insertInfo(tbCustomerName.Text, tbAddress.Text, this.cbLicenseFor.SelectedItem.ToString(), cbVersionFor.SelectedItem.ToString()
-                            , cbExpirationTime.SelectedItem.ToString(), SQLHID, TempSystem.UserName);
+                    genSerialKey();                    
                 }
                 else { MessageBox.Show("Customer Name is already exitst."); }
             }
@@ -203,6 +207,8 @@ namespace CenterLicenseManager
             this.mAddinNameList.Add("483ada3a-a4ff-4f59-9c71-4189d0dfffcc", "Export/Import Schedule To/From Excel");
             this.mAddinNameList.Add("18bca09b-da16-4171-a955-7692d0e3713f", "Element Locate 2017");
             this.mAddinNameList.Add("647fb033-66e1-45c9-8ea7-4e7c7cc00692", "TotalRebar - MutipleSelect 2017");
+            this.mAddinNameList.Add("e4f0facc-6828-43a1-9213-30ae72839e35", "AutoJoinElements");
+            this.mAddinNameList.Add("5045b6d9-899f-4ec0-9fa8-e672aa8dd966", "AddinBimHoaBinh");
         }
 
         private void createVersionList()

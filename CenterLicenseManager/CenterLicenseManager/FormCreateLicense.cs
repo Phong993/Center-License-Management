@@ -111,7 +111,7 @@ namespace CenterLicenseManager
             catch
             {
                 MessageBox.Show("Please insert a *.HID file.");
-                
+				return;
             }
                    
             //Get file name
@@ -129,27 +129,30 @@ namespace CenterLicenseManager
             strCode = this.encodeByDES(strCode, randomKey);
 
             strCode = strCode + "." + this.encodeByDES(randomKey, TRIDES_KEY);
-            FolderBrowserDialog openFileDiaglog = new FolderBrowserDialog();
-            if(openFileDiaglog.ShowDialog() == DialogResult.OK)
+			//FolderBrowserDialog openFileDiaglog = new FolderBrowserDialog();
+			SaveFileDialog openFileDiaglog = new SaveFileDialog();
+			openFileDiaglog.Filter = "All Files (*.cert)|*.cert";
+			openFileDiaglog.FileName = filename;
+			if (openFileDiaglog.ShowDialog() == DialogResult.OK)
             {
-                string filePath = Path.Combine(openFileDiaglog.SelectedPath,filename+".cert");
-                if(!File.Exists(filePath))
-                {
+                string filePath = Path.Combine(openFileDiaglog.FileName/*,filename+".cert"*/);
 
-                    FileStream fscert = new FileStream(filePath, FileMode.Create, FileAccess.Write);
-                    StreamWriter writer = new StreamWriter(fscert);
-                    writer.Write(strCode);
-                    writer.Close();
+				FileStream fscert = new FileStream(filePath, FileMode.Create, FileAccess.Write);
+				StreamWriter writer = new StreamWriter(fscert);
+				writer.Write(strCode);
+				writer.Close();
 
-                    ConnectionString connection = new ConnectionString();
-                    connection.ConnectSqlParam();
-                    connection.insertInfo(tbCustomerName.Text, tbAddress.Text, this.cbLicenseFor.SelectedItem.ToString(), cbVersionFor.SelectedItem.ToString()
-                            , cbExpirationTime.SelectedItem.ToString(), SQLHID, TempSystem.UserName);
-                }
-                else
-                {
-                    MessageBox.Show("File " + filename + ".cert already exists.");
-                }
+				ConnectionString connection = new ConnectionString();
+				connection.ConnectSqlParam();
+				connection.insertInfo(tbCustomerName.Text, tbAddress.Text, this.cbLicenseFor.SelectedItem.ToString(), cbVersionFor.SelectedItem.ToString()
+						, cbExpirationTime.SelectedItem.ToString(), SQLHID, TempSystem.UserName);
+				//if (!File.Exists(filePath))
+    //            {                    
+    //            }
+    //            else
+    //            {
+    //                MessageBox.Show("File " + filename + ".cert already exists.");
+    //            }
             }
 
         }

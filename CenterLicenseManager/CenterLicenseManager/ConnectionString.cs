@@ -15,7 +15,7 @@ namespace CenterLicenseManager
         {
             string connectionString = null;
             
-            connectionString = "Data Source=BIM-MINHDAT\\SQLExpress;Initial Catalog=LICENSE INFO;User ID=license_admin;Password=Hoabinh123";
+            connectionString = "Data Source=192.168.9.24\\SQLExpress;Initial Catalog=LICENSE INFO;User ID=license_admin;Password=Hoabinh123";
             cnn = new SqlConnection(connectionString);
             try
             {

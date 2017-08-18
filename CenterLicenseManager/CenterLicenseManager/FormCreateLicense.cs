@@ -214,7 +214,10 @@ namespace CenterLicenseManager
             this.mAddinNameList.Add("5045b6d9-899f-4ec0-9fa8-e672aa8dd966", "AddinBimHoaBinh");
             this.mAddinNameList.Add("a277ca6b-1b46-476e-8372-2bbf7e31ff8d", "Tile Count - Write");
 			this.mAddinNameList.Add("4b5163b6-7d43-44ba-9f2f-16f4096eebda", "RoomAssign_2017");
-		}
+            this.mAddinNameList.Add("790bce87-413e-40f2-915e-c548c751ae51", "Quick DIM Floor 2017");
+            
+
+        }
 
         private void createVersionList()
         {

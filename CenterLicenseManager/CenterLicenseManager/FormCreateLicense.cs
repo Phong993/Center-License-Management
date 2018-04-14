@@ -215,7 +215,7 @@ namespace CenterLicenseManager
             this.mAddinNameList.Add("a277ca6b-1b46-476e-8372-2bbf7e31ff8d", "Tile Count - Write");
 			this.mAddinNameList.Add("4b5163b6-7d43-44ba-9f2f-16f4096eebda", "RoomAssign_2017");
             this.mAddinNameList.Add("790bce87-413e-40f2-915e-c548c751ae51", "Quick DIM Floor 2017");
-            
+            this.mAddinNameList.Add("d010b7d7-2adf-4410-995b-76a7c0eaf631", "BiM Hoa Binh 2018");
 
         }
 
@@ -226,6 +226,9 @@ namespace CenterLicenseManager
             this.mVersionList.Add("1", "Version 1.0");
             this.mVersionList.Add("2", "Version 2.0");
             this.mVersionList.Add("3", "Version 3.0");
+            this.mVersionList.Add("4", "Version 4.0");
+            this.mVersionList.Add("5", "Version 5.0");
+            this.mVersionList.Add("6", "Version 6.0");
         }
         private void initVersionList()
         {
